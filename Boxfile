@@ -8,4 +8,4 @@ web1:
     - mysql
 
 db1:
-  name: bca_common
+  name: ci_app
