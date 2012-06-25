@@ -1,0 +1,11 @@
+web1:
+  name: codeigniter
+  shared_writable_dirs:
+    - application/cache
+    - application/logs
+  php_extensions:
+    - mysqli
+    - mysql
+
+db1:
+  name: bca_common
