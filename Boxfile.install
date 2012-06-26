@@ -1,5 +1,5 @@
 web1:
-  after_deploy:
+  after_build:
     # Copy current application structure to web root
     - "mv .codeigniter/application ."
     # Move pagoda config file to app/config
