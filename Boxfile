@@ -6,9 +6,6 @@ web1:
   php_extensions:
     - mysqli
     - mysql
-  after_build:
-    # Move pagoda config file to app/config
-    - "mv pagoda/database.php application/config/database.php"
 
 db1:
   name: ci_data
