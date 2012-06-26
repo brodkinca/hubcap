@@ -1,6 +1,6 @@
 web1:
   before_deploy:
     # Copy current application structure to web root
-    - "cp -r .codeigniter/application ."
+    - "mv .codeigniter/application ."
     # Move pagoda config file to app/config
     - "mv pagoda/database.php application/config/database.php"
