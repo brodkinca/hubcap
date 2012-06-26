@@ -1,7 +1,5 @@
 web1:
   before_deploy:
-    # Get latest version of Codeigniter
-    - "cd .codeigniter && git pull"
     # Copy current application structure to web root
     - "cp -r .codeigniter/application ."
     # Move pagoda config file to app/config
