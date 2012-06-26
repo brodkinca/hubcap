@@ -37,3 +37,7 @@ But wait, we're not done yet! To continue using this new Codeigniter version you
 `git commit .codeigniter -m 'Updated Codeigniter'`
 
 From now on your application will deploy with the latest version!
+
+=================================================
+
+Brought to you by [Brodkin CyberArts](http://brodkinca.com)
