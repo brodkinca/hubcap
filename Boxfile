@@ -3,6 +3,8 @@ web1:
     - application/cache
     - application/logs
   php_extensions:
+    # Cache Driver
+    - memcached
     # Database Driver
     - mysqli
     - mysql
@@ -12,3 +14,6 @@ web1:
 
 db1:
   type: mysql
+
+cache1:
+  type: memcached
