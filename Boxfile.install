@@ -6,3 +6,4 @@ web1:
     - "mv pagoda/database.php application/config/database.php"
     # Commit changes
     - "git commit -a -m 'Copied application directory from CI repository.'"
+    - "git push origin"
