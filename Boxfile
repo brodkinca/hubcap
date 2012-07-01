@@ -3,8 +3,12 @@ web1:
     - application/cache
     - application/logs
   php_extensions:
+    # Database Driver
     - mysqli
     - mysql
+    # Image Library
+    - gd
+    - imagick
 
 db1:
   type: mysql
