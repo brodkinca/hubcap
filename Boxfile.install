@@ -5,4 +5,4 @@ web1:
     # Move pagoda config file to app/config
     - "mv pagoda/database.php application/config/database.php"
     # Commit changes
-    - "git commit application -m 'Copied application directory from CI repository.'"
+    - "git commit -a -m 'Copied application directory from CI repository.'"
