@@ -1,5 +1,4 @@
 web1:
-  name: codeigniter
   shared_writable_dirs:
     - application/cache
     - application/logs
@@ -8,4 +7,4 @@ web1:
     - mysql
 
 db1:
-  name: ci_data
+  type: mysql
