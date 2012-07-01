@@ -1,8 +1,0 @@
-web1:
-  after_build:
-    # Copy current application structure to web root
-    - "mv .codeigniter/application ."
-    # Move pagoda config file to app/config
-    - "mv pagoda/database.php application/config/database.php"
-    # Commit changes
-    - "git commit -a -m 'Copied application directory from CI repository.'"
