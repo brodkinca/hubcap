@@ -4,3 +4,5 @@ web1:
     - "mv .codeigniter/application ."
     # Move pagoda config file to app/config
     - "mv pagoda/database.php application/config/database.php"
+    # Commit changes
+    - "git commit application -m 'Copied application directory from CI repository.'"
