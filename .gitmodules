@@ -13,3 +13,6 @@
 [submodule "assets/lib/bootstrap"]
 	path = assets/lib/bootstrap
 	url = git://github.com/twitter/bootstrap.git
+[submodule "assets/lib/font-awesome"]
+	path = assets/lib/font-awesome
+	url = git://github.com/FortAwesome/Font-Awesome.git
