@@ -1,3 +1,15 @@
 [submodule "codeigniter"]
 	path = codeigniter
 	url = git://github.com/EllisLab/CodeIgniter.git
+[submodule "application/third_party/template"]
+	path = application/third_party/template
+	url = git://github.com/philsturgeon/codeigniter-template.git
+[submodule "assets/lib/bootbox"]
+	path = assets/lib/bootbox
+	url = git://github.com/makeusabrew/bootbox.git
+[submodule "assets/lib/icanhaz"]
+	path = assets/lib/icanhaz
+	url = git://github.com/andyet/ICanHaz.js
+[submodule "assets/lib/bootstrap"]
+	path = assets/lib/bootstrap
+	url = git://github.com/twitter/bootstrap.git
