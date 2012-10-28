@@ -51,7 +51,7 @@ $config['base_url']	= '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -115,7 +115,7 @@ $config['charset'] = 'UTF-8';
 |--------------------------------------------------------------------------
 |
 | If you would like to use the 'hooks' feature you must enable it by
-| setting this variable to TRUE (boolean).  See the user guide for details.
+| setting this variable to TRUE (boolean) .  See the user guide for details.
 |
 */
 $config['enable_hooks'] = FALSE;
@@ -258,7 +258,7 @@ $config['cache_path'] = '';
 | http://codeigniter.com/user_guide/libraries/sessions.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = '3^tn}4yILZc=lR2LRENGcbK9?9ia[LU\L+`)CU{|<s+A/M<cnp!VVTf,m&X1!q';
 
 /*
 |--------------------------------------------------------------------------
@@ -408,8 +408,6 @@ $config['rewrite_short_tags'] = FALSE;
 |
 */
 $config['proxy_ips'] = '';
-
-
 
 /* End of file config.php */
 /* Location: ./application/config/config.php */

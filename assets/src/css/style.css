@@ -1,0 +1,18 @@
+@import url(http://fonts.googleapis.com/css?family=Cabin+Condensed:600);
+
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    font-size: 0.9em;
+}
+
+.navbar a.brand {
+    color: #f0f0f0;
+    font-family: 'Cabin Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.navbar i.icon-github {
+    font-size: 1.1rem;
+}
