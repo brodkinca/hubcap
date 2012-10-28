@@ -1,9 +1,6 @@
 [submodule "codeigniter"]
 	path = codeigniter
 	url = git://github.com/EllisLab/CodeIgniter.git
-[submodule "application/third_party/template"]
-	path = application/third_party/template
-	url = git://github.com/philsturgeon/codeigniter-template.git
 [submodule "assets/lib/bootbox"]
 	path = assets/lib/bootbox
 	url = git://github.com/makeusabrew/bootbox.git

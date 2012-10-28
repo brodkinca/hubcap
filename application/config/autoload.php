@@ -63,7 +63,7 @@
 |
 */
 
-$autoload['packages'] = array(APPPATH.'third_party/template');
+$autoload['packages'] = array();
 
 /*
 | -------------------------------------------------------------------
@@ -77,7 +77,7 @@ $autoload['packages'] = array(APPPATH.'third_party/template');
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('database', 'session', 'template');
+$autoload['libraries'] = array('database', 'session');
 
 /*
 | -------------------------------------------------------------------
