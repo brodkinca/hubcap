@@ -35,12 +35,15 @@ class webhook extends CI_Controller
         $data = @json_decode($this->input->post('payload'));
 
         if ($data) {
-            $hash = $data->after;
-            $user = $data->repository->owner->name;
-            $repo = $data->repository->name;
-            $branch = (strpos($data->ref, 'refs/heads/') === 0) ? substr($data->ref, 11) : false;
+            $out['hash'] = $data->after;
+            $out['user'] = $data->repository->owner->name;
+            $out['repo'] = $data->repository->name;
+            $out['branch'] = (strpos($data->ref, 'refs/heads/') === 0) ? substr($data->ref, 11) : false;
 
-            print_r($repo);
+            $file_name = sha1('$data->repository->url').'.json';
+
+            $this->load->helper('file');
+            write_file(FCPATH.'/webhook_data/'.$file_name, json_encode($out));
 
         } else {
             show_error('JSON data not received.');
