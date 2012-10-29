@@ -281,14 +281,14 @@ $config['encryption_key'] = '3^tn}4yILZc=lR2LRENGcbK9?9ia[LU\L+`)CU{|<s+A/M<cnp!
 | 'sess_time_to_update'		= how many seconds between CI refreshing Session Information
 |
 */
-$config['sess_cookie_name']		= 'ci_session';
-$config['sess_expiration']		= 7200;
-$config['sess_expire_on_close']	= FALSE;
-$config['sess_encrypt_cookie']	= FALSE;
-$config['sess_use_database']	= FALSE;
-$config['sess_table_name']		= 'ci_sessions';
-$config['sess_match_ip']		= FALSE;
-$config['sess_match_useragent']	= TRUE;
+$config['sess_cookie_name']		= 'hubcap_session';
+$config['sess_expiration']		= 0;
+$config['sess_expire_on_close']	= true;
+$config['sess_encrypt_cookie']	= true;
+$config['sess_use_database']	= true;
+$config['sess_table_name']		= 'sessions';
+$config['sess_match_ip']		= false;
+$config['sess_match_useragent']	= true;
 $config['sess_time_to_update']	= 300;
 
 /*
