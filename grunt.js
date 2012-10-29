@@ -30,16 +30,15 @@ module.exports = function(grunt) {
       'bootstrap-js': {
         src: [
           '<banner:meta.banner>',
-          'assets/lib/bootstrap/js/bootstrap-affix.js',
           'assets/lib/bootstrap/js/bootstrap-alert.js',
           'assets/lib/bootstrap/js/bootstrap-button.js',
           'assets/lib/bootstrap/js/bootstrap-collapse.js',
-          'assets/lib/bootstrap/js/bootstrap-dropdown.js',
           'assets/lib/bootstrap/js/bootstrap-modal.js',
           'assets/lib/bootstrap/js/bootstrap-tab.js',
           'assets/lib/bootstrap/js/bootstrap-tooltip.js',
           'assets/lib/bootstrap/js/bootstrap-popover.js',
-          'assets/lib/bootstrap/js/bootstrap-transition.js'
+          'assets/lib/bootstrap/js/bootstrap-transition.js',
+          'assets/lib/bootstrap/js/bootstrap-scrollspy.js'
         ],
         dest: 'assets/dist/js/bootstrap.js'
       },
