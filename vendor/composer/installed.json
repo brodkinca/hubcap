@@ -1,0 +1,53 @@
+[
+    {
+        "name": "bca/curl",
+        "version": "2.1.1",
+        "version_normalized": "2.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "git://github.com/brodkinca/BCA-PHP-CURL.git",
+            "reference": "2.1.1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/brodkinca/BCA-PHP-CURL/zipball/2.1.1",
+            "reference": "2.1.1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "ext-curl": "*"
+        },
+        "time": "2012-10-27 09:42:09",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "BCA\\CURL": "src"
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Philip Sturgeon",
+                "email": "email@philsturgeon.co.uk",
+                "homepage": "http://philsturgeon.co.uk/",
+                "role": "Original Developer"
+            },
+            {
+                "name": "Ryan Brodkin",
+                "email": "ryan@brodkinca.com",
+                "homepage": "http://ryanbrodkin.com/",
+                "role": "Developer"
+            }
+        ],
+        "description": "cURL wrapper for PHP applications.",
+        "homepage": "https://github.com/brodkinca/BCA-PHP-CURL",
+        "keywords": [
+            "curl",
+            "wrapper"
+        ]
+    }
+]

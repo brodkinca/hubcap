@@ -1,0 +1,31 @@
+{
+    "name": "bca/curl",
+    "type": "library",
+    "description": "cURL wrapper for PHP applications.",
+    "keywords": ["cURL","wrapper"],
+    "homepage": "https://github.com/brodkinca/BCA-PHP-CURL",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ryan Brodkin",
+            "email": "ryan@brodkinca.com",
+            "homepage": "http://ryanbrodkin.com/",
+            "role": "Developer"
+        },
+        {
+            "name": "Philip Sturgeon",
+            "email": "email@philsturgeon.co.uk",
+            "homepage": "http://philsturgeon.co.uk/",
+            "role": "Original Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "ext-curl": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "BCA\\CURL": "src"
+        }
+    }
+}
