@@ -92,6 +92,7 @@ module.exports = function(grunt) {
       },
       globals: {
         BCA: false,
+        ich: false,
         jQuery: false
       }
     }
