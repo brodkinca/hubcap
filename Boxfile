@@ -2,6 +2,7 @@ web1:
   shared_writable_dirs:
     - application/cache
     - application/logs
+    - webhook_data
   php_extensions:
     # Cache Driver
     - memcached
