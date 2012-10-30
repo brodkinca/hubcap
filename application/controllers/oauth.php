@@ -32,16 +32,17 @@ use \BCA\CURL\CURL;
  */
 class oauth extends CI_Controller
 {
-    private $_client_id = '8c43d958053cf9c3a608';
-    private $_client_secret;
     private $_state;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->_state = sha1($_SERVER['GITHUB_SECRET'].date('j'));
+    }
 
     public function begin()
     {
-        $this->_client_secret = $_SERVER['GITHUB_SECRET'];
-        $this->_state = $this->session->userdata('session_id');
-
-        $params['client_id'] = $this->_client_id;
+        $params['client_id'] = $_SERVER['GITHUB_ID'];
         $params['redirect_uri'] = site_url('oauth/complete');
         $params['scope'] = 'public_repo';
         $params['state'] = $this->_state;
@@ -65,8 +66,8 @@ class oauth extends CI_Controller
         }
 
         // Build access token request
-        $token_params['client_id'] = $this->_client_id;
-        $token_params['client_secret'] = $this->_client_secret;
+        $token_params['client_id'] = $_SERVER['GITHUB_ID'];
+        $token_params['client_secret'] = $_SERVER['GITHUB_SECRET'];
         $token_params['code'] = $this->input->get('code');
         $token_params['state'] = $this->_state;
 
