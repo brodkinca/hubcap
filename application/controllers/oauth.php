@@ -106,6 +106,7 @@ class oauth extends CI_Controller
             $hubcap_id = $hubcap_data->id;
         } else {
             $this->db
+                ->set('github_id', $user_data->id)
                 ->set('access_token', $access_token)
                 ->insert('users');
             $hubcap_id = $this->db->insert_id();

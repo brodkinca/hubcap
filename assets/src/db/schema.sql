@@ -8,9 +8,11 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `users` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `github_id` INT UNSIGNED NULL ,
   `access_token` CHAR(40) NULL ,
   PRIMARY KEY (`id`) ,
-  UNIQUE INDEX `access_key_UNIQUE` (`access_token` ASC) )
+  UNIQUE INDEX `access_key_UNIQUE` (`access_token` ASC) ,
+  UNIQUE INDEX `github_id_UNIQUE` (`github_id` ASC) )
 ENGINE = InnoDB;
 
 
@@ -18,8 +20,10 @@ ENGINE = InnoDB;
 -- Table `repos`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `repos` (
-  `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT ,
   `user_id` INT UNSIGNED NOT NULL ,
+  `name` VARCHAR(45) NOT NULL ,
+  `branch` VARCHAR(45) NOT NULL DEFAULT 'master' ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_repos_users_idx` (`user_id` ASC) ,
   CONSTRAINT `fk_repos_users`
