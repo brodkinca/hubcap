@@ -31,7 +31,7 @@ module.exports = function(grunt) {
         src: [
           '<banner:meta.banner>',
           'assets/lib/bootstrap/js/bootstrap-alert.js',
-          'assets/lib/bootstrap/js/bootstrap-button.js',
+          'assets/lib/bootstrap/js/bootstrap-dropdown.js',
           'assets/lib/bootstrap/js/bootstrap-collapse.js',
           'assets/lib/bootstrap/js/bootstrap-modal.js',
           'assets/lib/bootstrap/js/bootstrap-tab.js',
@@ -64,10 +64,15 @@ module.exports = function(grunt) {
         dest: 'assets/dist/js/bootstrap.js'
       },
       'plugins': {
-        src: ['assets/lib/bootbox/bootbox.js', 'assets/lib/icanhaz/ICanHaz.js', '<config:concat.helpers.dest>'],
+        src: [
+          'assets/lib/bootbox/bootbox.js',
+          'assets/lib/icanhaz/ICanHaz.js',
+          'assets/lib/highlightjs/highlight.pack.js',
+          '<config:concat.helpers.dest>'
+        ],
         dest: 'assets/dist/js/plugins.js'
       },
-      'portal': {
+      'hubcap': {
         src: ['<banner:meta.banner>', 'assets/src/js/analytics.js', 'assets/src/js/app.js'],
         dest: 'assets/dist/js/app.js'
       }
@@ -92,6 +97,8 @@ module.exports = function(grunt) {
       },
       globals: {
         BCA: false,
+        bootbox: false,
+        hljs: false,
         ich: false,
         jQuery: false
       }
