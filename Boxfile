@@ -12,6 +12,8 @@ web1:
     # Image Library
     - gd
     - imagick
+    # HTTP Requests
+    - curl
 
 db1:
   type: mysql

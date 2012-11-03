@@ -1,3 +1,5 @@
 global:
   env:
     - ENVIRONMENT: production
+    - GITHUB_ID
+    - GITHUB_SECRET
