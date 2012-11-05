@@ -140,7 +140,14 @@
                     <p><a class="btn" href="#">Get Started &raquo;</a></p>
                 </div>
                 <div class="span4">
-                    <!-- Future Ad Block -->
+                    <script type="text/javascript"><!--
+                    google_ad_client = "ca-pub-5600676303459847";
+                    /* Hubcap Right Above Fold */
+                    google_ad_slot = "4304181416";
+                    google_ad_width = 250;
+                    google_ad_height = 250;
+                    //-->
+                    </script>
                </div>
 
             </section>
@@ -259,6 +266,7 @@
         <script src="/assets/dist/js/bootstrap.js"></script>
         <script src="/assets/dist/js/plugins.js"></script>
         <script src="/assets/dist/js/app.js"></script>
+        <script src="//pagead2.googlesyndication.com/pagead/show_ads.js"></script>
 
         <script>
             var _gaq=[['_setAccount','UA-36053085-1'],['_trackPageview']];
