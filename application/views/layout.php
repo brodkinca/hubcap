@@ -148,6 +148,7 @@
                     google_ad_height = 250;
                     //-->
                     </script>
+                    <script src="//pagead2.googlesyndication.com/pagead/show_ads.js"></script>
                </div>
 
             </section>
@@ -266,7 +267,6 @@
         <script src="/assets/dist/js/bootstrap.js"></script>
         <script src="/assets/dist/js/plugins.js"></script>
         <script src="/assets/dist/js/app.js"></script>
-        <script src="//pagead2.googlesyndication.com/pagead/show_ads.js"></script>
 
         <script>
             var _gaq=[['_setAccount','UA-36053085-1'],['_trackPageview']];
