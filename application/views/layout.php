@@ -87,6 +87,12 @@
             <section id="my_repos" class="row">
 
                 <div class="span12">
+                    <div class="alert alert-error">
+                        <strong>Warning!</strong> We're still polishing this girl up, but feel free to sign up, and get your settings just right.  We'll start updating your docs once we actually launch!
+                    </div>
+                </div>
+
+                <div class="span12">
                     <h1>My Repositories</h1>
                 </div>
 
