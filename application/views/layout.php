@@ -257,6 +257,17 @@
             </div>
 
             <footer class="row">
+                <div class="span12">
+                    <script type="text/javascript"><!--
+                        google_ad_client = "ca-pub-5600676303459847";
+                        /* Footer */
+                        google_ad_slot = "6609763878";
+                        google_ad_width = 728;
+                        google_ad_height = 90;
+                        //-->
+                    </script>
+                    <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+                </div>
                 <p class="span6">
                     Hubcap is a free service of <a href="http://brodkinca.com/">Brodkin CyberArts</a>.
                 </p>
