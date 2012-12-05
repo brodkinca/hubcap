@@ -11,7 +11,7 @@
  * @copyright 2012 Brodkin CyberArts.
  * @license   All rights reserved.
  * @version   GIT: $Id$
- * @link      TBD
+ * @link      https://github.com/brodkinca/hubcap
  */
 
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
@@ -28,7 +28,7 @@ use \BCA\CURL\CURL;
  * @author    Brodkin CyberArts <support@brodkinca.com>
  * @copyright 2012 Brodkin CyberArts.
  * @license   All rights reserved.
- * @link      TBD
+ * @link      https://github.com/brodkinca/hubcap
  */
 class ajax extends CI_Controller
 {

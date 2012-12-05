@@ -11,7 +11,7 @@
  * @copyright 2012 Brodkin CyberArts.
  * @license   All rights reserved.
  * @version   GIT: $Id$
- * @link      TBD
+ * @link      https://github.com/brodkinca/hubcap
  */
 
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
@@ -26,7 +26,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  * @author    Brodkin CyberArts <support@brodkinca.com>
  * @copyright 2012 Brodkin CyberArts.
  * @license   All rights reserved.
- * @link      TBD
+ * @link      https://github.com/brodkinca/hubcap
  */
 class webhook extends CI_Controller
 {
