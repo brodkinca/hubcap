@@ -1,2 +1,5 @@
 application/cache
 assets/src/db/schema.mwb.bak
+webhook_data
+repo_temp
+deploy_keys
