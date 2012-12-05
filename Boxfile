@@ -4,6 +4,7 @@ web1:
     - application/logs
     - webhook_data
     - repo_temp
+    - deploy_keys
   php_extensions:
     # Cache Driver
     - memcached
