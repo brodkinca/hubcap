@@ -49,6 +49,18 @@ class ajax extends CI_Controller
     {
         $repo = $this->input->post('repo');
 
+        $hook_data['name'] = 'hubcap';
+        $hook_data['config'] = array();
+        $hook_data['active'] = true;
+
+        $hook = $this->_fetch_data(
+            'post',
+            '/repos/'.$repo.'/hooks',
+            array(),
+            true,
+            json_encode($hook_data, JSON_FORCE_OBJECT)
+        );
+
         if ($repo) {
             $this->db
                 ->set('name', $repo)
@@ -164,7 +176,7 @@ class ajax extends CI_Controller
         echo json_encode(array('users'=>$data));
     }
 
-    private function _fetch_data($method, $uri, array $params=array(), $force_update=false)
+    private function _fetch_data($method, $uri, array $params=array(), $force_update=false, $raw_data=null)
     {
         $uri = ltrim($uri, '/');
 
@@ -189,15 +201,16 @@ class ajax extends CI_Controller
                 ->header('Accept: application/json')
                 ->params($params)
                 ->param('access_token', $access_token)
-                ->{$method}();
+                ->{$method}($raw_data);
 
             $this->output->set_status_header($data->status());
 
             if ($data->success()) {
                 $this->cache->save($request_id, "$data", 600);
             } else {
+                $data->debug();
                 show_error(
-                    'Could not retrieve data from Github API.',
+                    'Could not retrieve data from Github API.'.$uri,
                     $data->status()
                 );
             }
