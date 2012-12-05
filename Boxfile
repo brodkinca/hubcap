@@ -3,6 +3,7 @@ web1:
     - application/cache
     - application/logs
     - webhook_data
+    - repo_temp
   php_extensions:
     # Cache Driver
     - memcached
