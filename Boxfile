@@ -22,3 +22,11 @@ db1:
 
 cache1:
   type: memcached
+
+worker1:
+  exec: "workers/doc_factory.php"
+  start:
+    ready: "reporting for duty"
+  stop:
+    signal: SIGQUIT
+    timeout: 60
