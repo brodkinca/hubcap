@@ -50,19 +50,19 @@ class webhook extends CI_Controller
                 show_error('Repository not active in Hubcap. Sign up at http://hubcap.it/', 404);
             }
 
-            $out['ref'] = $data->after;
-            $out['user'] = $data->repository->owner->name;
-            $out['repo'] = $data->repository->name;
-            $out['private_key'] = $config_db->private_key;
+            $request_data['ref'] = $data->after;
+            $request_data['user'] = $data->repository->owner->name;
+            $request_data['repo'] = $data->repository->name;
+            $request_data['private_key'] = $config_db->private_key;
 
             $push_branch = substr($data->ref, 11);
 
-            $file_name = $out['user'].'_'.$out['repo'].'_'.$out['hash'].'_'.$push_branch.'.json';
+            $file_name = $request_data['user'].'_'.$request_data['repo'].'_'.$request_data['hash'].'_'.$push_branch.'.json';
 
             // Write file if branch matches
             if ($config_db->branch == $push_branch) {
                 $this->load->helper('file');
-                write_file(FCPATH.'/webhook_data/'.$file_name, json_encode($out));
+                write_file(FCPATH.'/webhook_data/'.$file_name, json_encode($request_data));
             } else {
                 show_error('This repository only updates docs when branch '.$config_db->branch.' is updated. Push to branch '.$push_branch.' ignored.', 200);
             }
