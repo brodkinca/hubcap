@@ -228,12 +228,12 @@
                             <tr>
                                 <td><code>dest_path</code></td>
                                 <td>Path from the root of the repository to the directory where the docs should be stored.  This could be used, for instance, to automatically update docs in a subdirectory and manually maintain a website in the document root.</td>
-                                <td><code>./</code></td>
+                                <td><code>/</code></td>
                             </tr>
                             <tr>
                                 <td><code>source_path</code></td>
                                 <td>Path from the root directory of the repository to the documents directory.</td>
-                                <td><code>./docs</code></td>
+                                <td><code>/docs</code></td>
                             </tr>
                         </tbody>
                     </table>
