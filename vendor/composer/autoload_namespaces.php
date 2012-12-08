@@ -6,5 +6,9 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Net' => $vendorDir . '/phpseclib/phpseclib/phpseclib/',
+    'Math' => $vendorDir . '/phpseclib/phpseclib/phpseclib/',
+    'File' => $vendorDir . '/phpseclib/phpseclib/phpseclib/',
+    'Crypt' => $vendorDir . '/phpseclib/phpseclib/phpseclib/',
     'BCA\\CURL' => $vendorDir . '/bca/curl/src',
 );

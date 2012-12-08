@@ -1,5 +1,6 @@
 {
     "require": {
-        "bca/curl": "2.1.2"
+        "bca/curl": "2.1.2",
+        "phpseclib/phpseclib": "0.3.*"
     }
 }

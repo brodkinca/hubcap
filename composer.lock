@@ -1,5 +1,5 @@
 {
-    "hash": "a78a7ece720334b589cb2c38d3670b37",
+    "hash": "5161f240b55918bed0aa94c644af6b9c",
     "packages": [
         {
             "name": "bca/curl",
@@ -50,6 +50,73 @@
             "keywords": [
                 "curl",
                 "wrapper"
+            ]
+        },
+        {
+            "name": "phpseclib/phpseclib",
+            "version": "0.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpseclib/phpseclib",
+                "reference": "0.3.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/phpseclib/phpseclib/archive/0.3.1.zip",
+                "reference": "0.3.1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "suggest": {
+                "ext-mcrypt": "Install the Mcrypt extension in order to speed up a wide variety of cryptographic operations.",
+                "ext-gmp": "Install the GMP (GNU Multiple Precision) extension in order to speed up arbitrary precision integer arithmetic operations.",
+                "pear-pear/PHP_Compat": "Install PHP_Compat to get phpseclib working on PHP >= 4.3.3."
+            },
+            "time": "2012-11-20 03:10:22",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Crypt": "phpseclib/",
+                    "File": "phpseclib/",
+                    "Math": "phpseclib/",
+                    "Net": "phpseclib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                "phpseclib/"
+            ],
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jim Wigginton",
+                    "email": "terrafrost@php.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP Secure Communications Library - Pure-PHP implementations of RSA, AES, SSH2, SFTP, X.509 etc.",
+            "homepage": "http://phpseclib.sourceforge.net",
+            "keywords": [
+                "security",
+                "cryptography",
+                "ssh",
+                "encryption",
+                "crypto",
+                "signature",
+                "signing",
+                "rsa",
+                "aes",
+                "sftp",
+                "x509",
+                "x.509",
+                "asn1",
+                "asn.1",
+                "BigInteger"
             ]
         }
     ],

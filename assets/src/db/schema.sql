@@ -24,6 +24,7 @@ CREATE  TABLE IF NOT EXISTS `repos` (
   `user_id` INT UNSIGNED NOT NULL ,
   `name` VARCHAR(45) NOT NULL ,
   `branch` VARCHAR(45) NOT NULL DEFAULT 'master' ,
+  `private_key` BLOB NOT NULL ,
   PRIMARY KEY (`id`) ,
   INDEX `fk_repos_users_idx` (`user_id` ASC) ,
   CONSTRAINT `fk_repos_users`

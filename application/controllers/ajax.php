@@ -61,10 +61,34 @@ class ajax extends CI_Controller
             json_encode($hook_data, JSON_FORCE_OBJECT)
         );
 
+        // Generate Key Pair
+        $rsa = new Crypt_RSA();
+        $rsa->setPublicKeyFormat(CRYPT_RSA_PUBLIC_FORMAT_OPENSSH);
+        extract($rsa->createKey());
+
+        $rsa_key_private = @$privatekey;
+        $rsa_key_public = @$publickey;
+
+        if (empty($rsa_key_private) OR empty($rsa_key_public)) {
+            show_error('Error generating RSA key.');
+        }
+
+        $deploy_key_data['title'] = 'Hubcap '.date(DATE_RFC850);
+        $deploy_key_data['key'] = $rsa_key_public;
+
+        $deploy_key = $this->_fetch_data(
+            'post',
+            '/repos/'.$repo.'/keys',
+            array(),
+            true,
+            json_encode($deploy_key_data, JSON_FORCE_OBJECT)
+        );
+
         if ($repo) {
             $this->db
                 ->set('name', $repo)
                 ->set('user_id', $this->session->userdata('hubcap_id'))
+                ->set('private_key', $rsa_key_private)
                 ->insert('repos');
 
         } else {
