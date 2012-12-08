@@ -214,7 +214,9 @@ class ajax extends CI_Controller
 
         $request_id = 'request_'.sha1($method.$uri.serialize($params).$access_token);
 
-        if (!$force_update) {
+        if ($force_update) {
+            $data = false;
+        } else {
             $data = $this->cache->get($request_id);
         }
 
