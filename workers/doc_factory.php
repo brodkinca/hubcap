@@ -60,19 +60,19 @@ while (1) {
         $request_data = json_decode($request_data_raw);
 
         // Break out variables
-        $hash = @$request_data->hash;
+        $ref = @$request_data->ref;
         $user = @$request_data->user;
         $repo = @$request_data->repo;
 
         // Proceed if we have the needed varibles
-        if (!empty($hash) && !empty($user) && !empty($repo)) {
+        if (!empty($ref) && !empty($user) && !empty($repo)) {
 
             mkdir($path_working_dir);
 
             if (is_writable($path_working_dir)) {
 
                 // Update the docs at Github
-                system("./doc_factory.sh $user $repo $hash $path_working_dir");
+                system("./doc_factory.sh $user $repo $ref $path_working_dir");
                 unlink($path_request_file_active);
                 continue;
             }

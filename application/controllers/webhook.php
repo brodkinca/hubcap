@@ -35,18 +35,40 @@ class webhook extends CI_Controller
         $data = @json_decode($this->input->post('payload'));
 
         if ($data) {
-            $out['hash'] = $data->after;
+
+            $config_db = $this->db
+                ->select('branch, private_key')
+                ->where(
+                    'name',
+                    $data->repository->owner->name.'/'.$data->repository->name
+                )
+                ->limit(1)
+                ->get('repos')
+                ->row();
+
+            if (!isset($config_db->private_key)) {
+                show_error('Repository not active in Hubcap. Sign up at http://hubcap.it/', 404);
+            }
+
+            $out['ref'] = $data->after;
             $out['user'] = $data->repository->owner->name;
             $out['repo'] = $data->repository->name;
-            $out['branch'] = (strpos($data->ref, 'refs/heads/') === 0) ? substr($data->ref, 11) : false;
+            $out['private_key'] = $config_db->private_key;
 
-            $file_name = $out['user'].'_'.$out['repo'].'_'.$out['hash'].'_'.$out['branch'].'.json';
+            $push_branch = substr($data->ref, 11);
 
-            $this->load->helper('file');
-            write_file(FCPATH.'/webhook_data/'.$file_name, json_encode($out));
+            $file_name = $out['user'].'_'.$out['repo'].'_'.$out['hash'].'_'.$push_branch.'.json';
+
+            // Write file if branch matches
+            if ($config_db->branch == $push_branch) {
+                $this->load->helper('file');
+                write_file(FCPATH.'/webhook_data/'.$file_name, json_encode($out));
+            } else {
+                show_error('This repository only updates docs when branch '.$config_db->branch.' is updated. Push to branch '.$push_branch.' ignored.', 200);
+            }
 
         } else {
-            show_error('JSON data not received.');
+            show_error('JSON data not received.', 400);
         }
     }
 }

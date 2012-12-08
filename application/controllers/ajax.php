@@ -234,7 +234,7 @@ class ajax extends CI_Controller
             } else {
                 $data->debug();
                 show_error(
-                    'Could not retrieve data from Github API.'.$uri,
+                    'Could not retrieve data from Github API. '.$uri,
                     $data->status()
                 );
             }
