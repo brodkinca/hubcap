@@ -23,8 +23,10 @@ use Monolog\Handler\StreamHandler;
 
 $log = new Logger('DOC_FACTORY');
 $log->pushHandler(
-    new StreamHandler(__DIR__.'/../hubcap_logs/workers.log',
-        Logger::DEBUG)
+    new StreamHandler(
+        realpath(__DIR__.'/../hubcap_logs/workers.log'),
+        Logger::DEBUG
+    )
 );
 
 /* Worker is Active by Default */
