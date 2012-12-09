@@ -2,6 +2,7 @@ web1:
   shared_writable_dirs:
     - application/cache
     - application/logs
+    - hubcap_logs
     - webhook_data
     - repo_temp
   php_extensions:
