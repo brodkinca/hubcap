@@ -15,7 +15,7 @@
  * @link      http://github.com/brodkinca/hubcap
  */
 
-require_once '../vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
 
 /* Setup Logger */
 use Monolog\Logger;
@@ -28,8 +28,8 @@ $log->pushHandler(new StreamHandler('../hubcap_logs/workers.log', Logger::DEBUG)
 $active = true;
 
 /* Set Paths */
-$temp_path = realpath('../repo_temp');
-$data_path = realpath('../webhook_data');
+$temp_path = realpath(__DIR__.'/../repo_temp');
+$data_path = realpath(__DIR__.'/../webhook_data');
 $key_path = $temp_path.'/rsa.key';
 
 /* Init Messages */
