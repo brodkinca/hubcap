@@ -87,7 +87,7 @@ class webhook extends CI_Controller
 
         $push_branch = substr($payload->ref, 11);
 
-        $file_name = $request_data['user'].'_'.$request_data['repo'].'_'.$request_data['hash'].'_'.$push_branch.'.json';
+        $file_name = $request_data['user'].'_'.$request_data['repo'].'_'.$push_branch.'.json';
 
         // Write file if branch matches
         if ($config_db->branch == $push_branch) {
