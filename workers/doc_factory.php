@@ -57,7 +57,7 @@ $log->addDebug('RSA Keyfile: '.$key_path);
 while (1) {
     $log->addDebug('Starting Worker Loop...');
 
-    // Prcess SIGQUIT if no longer active
+    /* Prcess SIGQUIT if no longer active */
     if (!$active) {
         $log->addDebug('Terminating worker.');
         echo "Terminating worker...";
@@ -74,20 +74,20 @@ while (1) {
 
     foreach ($requests as $path_request_file) {
 
-        // Use request filename as request ID
+        /* Use request filename as request ID */
         $request_id = basename($path_request_file);
 
-        // Log request ID
+        /* Log request ID */
         $log->addDebug('Processing '.$request_id);
 
-        // Set future paths
+        /* Set future paths */
         $path_working_dir = $temp_path.'/'.sha1($request_id);
         $path_request_file_active = $path_request_file.'.active';
 
-        // Rename request file to identify it as active
+        /* Rename request file to identify it as active */
         $rename = rename($path_request_file, $path_request_file_active);
 
-        // Test rename success
+        /* Test rename success */
         if ($rename) {
             $log->addDebug(
                 $request.' moved to '.basename($path_request_file_active)
@@ -101,18 +101,18 @@ while (1) {
             continue;
         }
 
-        // Get and process request data
+        /* Get and process request data */
         $request_data_raw = file_get_contents($path_request_file_active);
         $request_data = json_decode($request_data_raw);
 
-        // Verify that JSON was decoded
+        /* Verify that JSON was decoded */
         if (!$request_data) {
             $log->addError('Error reading variables from JSON.');
             $log->addError('Continuing to next request.');
             continue;
         }
 
-        // Break out variables
+        /* Break out variables */
         $user = $request_data->user;
         $repo = $request_data->repo;
         $ref = $request_data->ref;
@@ -120,7 +120,7 @@ while (1) {
         $dest_branch = $request_data->config->dest_branch;
         $dest_path = $request_data->config->dest_path;
 
-        // Write key to file
+        /* Write key to file */
         $key_success = file_put_contents($key_path, $request_data->private_key);
 
         if (!$key_success) {
@@ -138,7 +138,7 @@ while (1) {
         }
 
         if (is_writable($path_working_dir)) {
-            // Update the docs at Github
+            /* Update the docs at Github */
             system("./doc_factory.sh $user $repo $ref $path_working_dir $source_path $dest_branch $dest_path $key_path");
             unlink($path_request_file_active);
             continue;
