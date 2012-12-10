@@ -21,10 +21,7 @@ require_once __DIR__.'/../vendor/autoload.php';
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
-$log_path = __DIR__.'/../hubcap_logs/workers.log';
-touch($log_path);
-$log_path = realpath($log_path);
-
+$log_path = realpath(__DIR__.'/../hubcap_logs/').'/workers.log';
 $log = new Logger('DOC_FACTORY');
 $log->pushHandler(new StreamHandler($log_path, Logger::DEBUG));
 
@@ -37,12 +34,22 @@ $data_path = realpath(__DIR__.'/../webhook_data');
 $key_path = $temp_path.'/rsa.key';
 
 /* Init Messages */
-$log->addDebug('Document factory initialized.');
 echo "\n###################################################\n";
-echo "Document factory worker reporting for duty, sir.\n\n";
+echo "\n";
+echo "DOCUMENT FACTORY WORKER\n";
+echo "\n";
 echo "Repos will be processed in the following directory:\n";
 echo $temp_path."\n";
+echo "\n";
+echo "Worker actions logged at:\n";
+echo $log_path."\n";
+echo "\n";
+echo "Document factory worker reporting for duty, sir.\n";
+echo "\n";
 echo "###################################################\n";
+echo "\n";
+echo "\n";
+$log->addDebug('Document factory initialized.');
 $log->addDebug('Git Working Path: '.$temp_path);
 $log->addDebug('JSON Data Source: '.$data_path);
 $log->addDebug('RSA Keyfile: '.$key_path);
