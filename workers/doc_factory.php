@@ -21,13 +21,12 @@ require_once __DIR__.'/../vendor/autoload.php';
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
+$log_path = __DIR__.'/../hubcap_logs/workers.log';
+touch($log_path);
+$log_path = realpath($log_path);
+
 $log = new Logger('DOC_FACTORY');
-$log->pushHandler(
-    new StreamHandler(
-        realpath(__DIR__.'/../hubcap_logs/workers.log'),
-        Logger::DEBUG
-    )
-);
+$log->pushHandler(new StreamHandler($log_path, Logger::DEBUG));
 
 /* Worker is Active by Default */
 $active = true;
