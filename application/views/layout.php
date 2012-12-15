@@ -145,18 +145,28 @@
                     <p>Hubcap simplifies your life and mine by making documentation updates automatic.  Shortly after you push changes to Github, we get a notification via a post-receive hook.  In accordance with your settings we then deploy the latest version of you docs!  See? I told you it was simple.</p>
                     <p><a class="btn" href="#">Get Started &raquo;</a></p>
                 </div>
-                <div class="span4">
+                <div class="span4 hidden-phone">
                     <script type="text/javascript"><!--
-                    google_ad_client = "ca-pub-5600676303459847";
-                    /* Hubcap Right Above Fold */
-                    google_ad_slot = "4304181416";
-                    google_ad_width = 250;
-                    google_ad_height = 250;
-                    //-->
+                        google_ad_client = "ca-pub-5600676303459847";
+                        /* Hubcap Right Above Fold */
+                        google_ad_slot = "4304181416";
+                        google_ad_width = 250;
+                        google_ad_height = 250;
+                        //-->
                     </script>
                     <script src="//pagead2.googlesyndication.com/pagead/show_ads.js"></script>
                </div>
-
+               <div class="span4 visible-phone">
+                    <script type="text/javascript"><!--
+                        google_ad_client = "ca-pub-5600676303459847";
+                        /* Hubcap Right Above Fold-Phone */
+                        google_ad_slot = "8521548675";
+                        google_ad_width = 320;
+                        google_ad_height = 50;
+                        //-->
+                    </script>
+                    <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+               </div>
             </section>
 
             <hr>
@@ -257,13 +267,35 @@
             </div>
 
             <footer class="row">
-                <div class="span12">
+                <div class="span12 visible-desktop">
                     <script type="text/javascript"><!--
                         google_ad_client = "ca-pub-5600676303459847";
                         /* Footer */
                         google_ad_slot = "6609763878";
                         google_ad_width = 728;
                         google_ad_height = 90;
+                        //-->
+                    </script>
+                    <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+                </div>
+                <div class="span12 visible-tablet">
+                    <script type="text/javascript"><!--
+                        google_ad_client = "ca-pub-5600676303459847";
+                        /* Footer-Tablet */
+                        google_ad_slot = "4091349073";
+                        google_ad_width = 468;
+                        google_ad_height = 60;
+                        //-->
+                    </script>
+                    <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+                </div>
+                <div class="span12 visible-phone">
+                    <script type="text/javascript"><!--
+                        google_ad_client = "ca-pub-5600676303459847";
+                        /* Footer-Phone */
+                        google_ad_slot = "7044815474";
+                        google_ad_width = 320;
+                        google_ad_height = 50;
                         //-->
                     </script>
                     <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
