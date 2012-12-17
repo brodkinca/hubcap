@@ -15,9 +15,6 @@
  * @link      http://github.com/brodkinca/hubcap
  */
 
-echo "Starting worker...\n";
-sleep(30);
-
 require_once __DIR__.'/../vendor/autoload.php';
 
 /* Setup Logger */
