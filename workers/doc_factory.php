@@ -21,11 +21,10 @@ require_once __DIR__.'/../vendor/autoload.php';
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
-echo __DIR__."\n";
-echo __DIR__.'/../hubcap_logs/'."\n";
-var_dump(is_writable(__DIR__.'/../hubcap_logs/'))."\n";
-var_dump(realpath(__DIR__.'/../hubcap_logs/'));
-var_dump(is_writable(realpath(__DIR__.'/../hubcap_logs/')))."\n";
+system('ls -l '.__DIR__.'/../');
+echo "zzzzZZZzzz\n";
+sleep(30);
+system('ls -l '.__DIR__.'/../');
 echo "\n";
 
 $log_path = realpath(__DIR__.'/../hubcap_logs/').'/workers.log';
