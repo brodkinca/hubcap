@@ -20,7 +20,8 @@ require_once __DIR__.'/../vendor/autoload.php';
 /* Setup Logger */
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
-
+echo __DIR__."\n";
+echo dirname(__FILE__)."\n";
 $log_path = realpath(__DIR__.'/../hubcap_logs/').'/workers.log';
 touch($log_path);
 
