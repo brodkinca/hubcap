@@ -15,17 +15,14 @@
  * @link      http://github.com/brodkinca/hubcap
  */
 
+echo "Starting worker...\n";
+sleep(30);
+
 require_once __DIR__.'/../vendor/autoload.php';
 
 /* Setup Logger */
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
-
-system('ls -l '.__DIR__.'/../');
-echo "zzzzZZZzzz\n";
-sleep(30);
-system('ls -l '.__DIR__.'/../');
-echo "\n";
 
 $log_path = realpath(__DIR__.'/../hubcap_logs/').'/workers.log';
 touch($log_path);

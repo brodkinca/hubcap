@@ -26,8 +26,7 @@ cache1:
 worker1:
   exec: "workers/doc_factory.php"
   start:
-    ready: "reporting for duty"
-    timeout: 120
+    ready: "Starting worker..."
   stop:
     signal: SIGQUIT
     timeout: 60
