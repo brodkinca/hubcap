@@ -22,6 +22,8 @@ use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
 $log_path = realpath(__DIR__.'/../hubcap_logs/').'/workers.log';
+touch($log_path);
+
 $log = new Logger('DOC_FACTORY');
 $log->pushHandler(new StreamHandler($log_path, Logger::DEBUG));
 
