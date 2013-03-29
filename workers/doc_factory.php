@@ -27,7 +27,7 @@ if ($_SERVER['ENVIRONMENT'] !== 'production') {
 }
 $base_path = realpath($base_path);
 
-$log_path = realpath($base_path.'/hubcap_logs/').'/workers.log';
+$log_path = $base_path.'/hubcap_logs/workers.log';
 touch($log_path);
 
 $log = new Logger('DOC_FACTORY');
@@ -37,8 +37,8 @@ $log->pushHandler(new StreamHandler($log_path, Logger::DEBUG));
 $active = true;
 
 /* Set Paths */
-$temp_path = realpath($base_path.'/repo_temp');
-$data_path = realpath($base_path.'/webhook_data');
+$temp_path = $base_path.'/repo_temp';
+$data_path = $base_path.'/webhook_data';
 $key_path = $temp_path.'/rsa.key';
 
 /* Init Messages */
