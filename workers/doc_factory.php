@@ -154,7 +154,11 @@ while (1) {
         if (is_writable($path_working_dir)) {
             /* Update the docs at Github */
             ob_start();
-            passthru(__DIR__"/doc_factory.sh $user $repo $ref $path_working_dir $source_path $dest_branch $dest_path $key_path");
+            passthru(
+                __DIR__."/doc_factory.sh ".
+                "$user $repo $ref $path_working_dir ".
+                "$source_path $dest_branch $dest_path $key_path"
+            );
             $log->addDebug(ob_get_contents());
             ob_end_flush();
             unlink($path_request_file_active);
