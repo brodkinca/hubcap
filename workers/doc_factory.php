@@ -21,10 +21,7 @@ require_once __DIR__.'/../vendor/autoload.php';
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
-$base_path = __DIR__;
-if ($_SERVER['ENVIRONMENT'] !== 'production') {
-    $base_path = __DIR__.'/..';
-}
+$base_path = __DIR__.'/..';
 $base_path = realpath($base_path);
 
 $log_path = $base_path.'/hubcap_logs/workers.log';
