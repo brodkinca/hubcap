@@ -88,14 +88,11 @@ while (1) {
             continue;
         }
 
-        /* Use request filename as request ID */
-        $request_id = $request_file;
-
         /* Log request ID */
-        $log->addDebug('Processing '.$request_id);
+        $log->addDebug('Processing '.$request_file);
 
         /* Set future paths */
-        $path_working_dir = $temp_path.'/'.sha1($request_id);
+        $path_working_dir = $temp_path.'/'.sha1($request_file);
         $path_request_file_active = $path_request_file.'.active';
 
         /* Rename request file to identify it as active */
@@ -104,11 +101,11 @@ while (1) {
         /* Test rename success */
         if ($rename) {
             $log->addDebug(
-                $request.' moved to '.basename($path_request_file_active)
+                $request_file.' moved to '.basename($path_request_file_active)
             );
         } else {
             $log->addError(
-                'Failed to rename '.$request_id.' to '.
+                'Failed to rename '.$request_file.' to '.
                 basename($path_request_file_active)
             );
             $log->addError('Continuing to next request.');
