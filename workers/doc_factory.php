@@ -121,6 +121,7 @@ while (1) {
 
         /* Verify that JSON was decoded */
         if (!$request_data) {
+            unlink($path_request_file_active);
             $log->addError('Error reading variables from JSON.');
             $log->addError('Continuing to next request.');
             continue;
@@ -146,6 +147,7 @@ while (1) {
         $mkdir_success = mkdir($path_working_dir);
 
         if (!$mkdir_success) {
+            rename($path_request_file_active, $path_request_file);
             $log->addError('Could not create working directory '.$path_working_dir);
             $log->addError('Continuing to next request.');
             continue;
@@ -157,13 +159,9 @@ while (1) {
             unlink($path_request_file_active);
             continue;
         } else {
-            $log->addError('Working directory is not writable.');
-        }
-
-        /* @todo Should probably do this as a separate cleanup loop */
-        if (file_exists($path_request_file_active)) {
-            // FAILURE: Remove .active suffix from request file
+            system("rm -rf $path_working_dir");
             rename($path_request_file_active, $path_request_file);
+            $log->addError('Working directory is not writable.');
         }
     }
 
