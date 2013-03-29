@@ -154,12 +154,13 @@ while (1) {
 
         if (is_writable($path_working_dir)) {
             /* Update the docs at Github */
-            ob_start();
-            passthru(
-                __DIR__."/doc_factory.sh ".
+            $cmd = __DIR__."/doc_factory.sh ".
                 "$user $repo $ref $path_working_dir ".
-                "$source_path $dest_branch $dest_path $key_path"
-            );
+                "$source_path $dest_branch $dest_path $key_path";
+            $log->addDebug('Execute hubcap shell script...');
+            $log->addDebug('$ '.$cmd);
+            ob_start();
+            passthru($cmd);
             $log->addDebug(ob_get_contents());
             ob_end_flush();
             unlink($path_request_file_active);
