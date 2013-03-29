@@ -69,7 +69,7 @@ while (1) {
         exit;
     }
 
-    $requests = glob("$data_path/*.json");
+    $requests = array_slice(scandir($data_path), 2);
 
     $log->addDebug(count($requests).' requests found.');
     echo "\n###################################################\n";
@@ -78,6 +78,11 @@ while (1) {
     echo "###################################################\n";
 
     foreach ($requests as $path_request_file) {
+
+        /* Skip file if active in another worker */
+        if (strpos($path_request_file, 'active')) {
+            continue;
+        }
 
         /* Use request filename as request ID */
         $request_id = basename($path_request_file);
