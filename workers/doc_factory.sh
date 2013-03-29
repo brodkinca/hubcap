@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo Shell script taking the reigns\!
+
 if [ $# != 8 ]
     then
     echo This script requires exactly eight arguments.
