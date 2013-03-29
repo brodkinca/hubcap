@@ -147,6 +147,7 @@ while (1) {
         $mkdir_success = mkdir($path_working_dir);
 
         if (!$mkdir_success) {
+            system("rm -rf $path_working_dir");
             rename($path_request_file_active, $path_request_file);
             $log->addError('Could not create working directory '.$path_working_dir);
             $log->addError('Continuing to next request.');
@@ -155,7 +156,10 @@ while (1) {
 
         if (is_writable($path_working_dir)) {
             /* Update the docs at Github */
+            ob_start();
             system("./doc_factory.sh $user $repo $ref $path_working_dir $source_path $dest_branch $dest_path $key_path");
+            $log->addDebug(ob_get_contents());
+            ob_end_flush();
             unlink($path_request_file_active);
             continue;
         } else {
