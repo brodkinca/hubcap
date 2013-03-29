@@ -1,5 +1,7 @@
 #!/bin/sh
 
+exec 2>&1
+
 echo Shell script taking the reigns\!
 
 if [ $# != 8 ]
