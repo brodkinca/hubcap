@@ -141,6 +141,7 @@ while (1) {
             continue;
         }
 
+        system("rm -rf $path_working_dir");
         $mkdir_success = mkdir($path_working_dir);
 
         if (!$mkdir_success) {
