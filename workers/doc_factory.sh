@@ -26,7 +26,7 @@ echo Retrieving $COMMIT from $USER/$REPO...
 
 git clone -n git@github.com:$USER/$REPO.git $TEMP_PATH
 cd $TEMP_PATH
-git checkout -v -b $DEST_BRANCH
+git checkout -b $DEST_BRANCH
 git pull -v origin $DEST_BRANCH
 git push -v --all origin
 git rm -v -r *
