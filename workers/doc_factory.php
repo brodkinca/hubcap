@@ -77,15 +77,19 @@ while (1) {
     echo count($requests).' requests found.'."\n";
     echo "###################################################\n";
 
-    foreach ($requests as $path_request_file) {
+    foreach ($requests as $request_file) {
+
+        /* Set Full File Path */
+        $path_request_file = $data_path.'/'.$request_file;
 
         /* Skip file if active in another worker */
         if (strpos($path_request_file, 'active')) {
+            $log->addDebug('Skipping '.$request_file);
             continue;
         }
 
         /* Use request filename as request ID */
-        $request_id = basename($path_request_file);
+        $request_id = $request_file;
 
         /* Log request ID */
         $log->addDebug('Processing '.$request_id);
