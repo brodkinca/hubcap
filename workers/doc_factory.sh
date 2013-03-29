@@ -24,7 +24,7 @@ ssh-add $KEY_PATH
 
 echo Retrieving $COMMIT from $USER/$REPO...
 
-git clone -nv git@github.com:$USER/$REPO.git $TEMP_PATH
+git clone -n git@github.com:$USER/$REPO.git $TEMP_PATH
 cd $TEMP_PATH
 git checkout -v -b $DEST_BRANCH
 git pull -v origin $DEST_BRANCH
