@@ -22,11 +22,10 @@ KEY_PATH=$8
 
 # System Configuration
 chmod 0600 $KEY_PATH
-ssh-add $KEY_PATH
 
 echo Retrieving $COMMIT from $USER/$REPO...
 
-git clone -n git@github.com:$USER/$REPO.git $TEMP_PATH
+git clone -n ssh://gh/$USER/$REPO.git $TEMP_PATH
 cd $TEMP_PATH
 git checkout -b $DEST_BRANCH
 git pull -v origin $DEST_BRANCH
@@ -40,4 +39,3 @@ git commit -v -m "Github pages update via Hubcap http://hubcap.it/"
 git push -v origin $DEST_BRANCH
 cd ~
 rm -rfv $TEMP_PATH
-ssh-add -D
