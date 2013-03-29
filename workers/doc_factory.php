@@ -21,7 +21,13 @@ require_once __DIR__.'/../vendor/autoload.php';
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
-$log_path = realpath(__DIR__.'/../hubcap_logs/').'/workers.log';
+$base_path = __DIR__;
+if ($_SERVER['ENVIRONMENT'] !== 'production') {
+    $base_path = __DIR__.'/..';
+}
+$base_path = realpath($base_path);
+
+$log_path = realpath($base_path.'/hubcap_logs/').'/workers.log';
 touch($log_path);
 
 $log = new Logger('DOC_FACTORY');
@@ -31,8 +37,8 @@ $log->pushHandler(new StreamHandler($log_path, Logger::DEBUG));
 $active = true;
 
 /* Set Paths */
-$temp_path = realpath(__DIR__.'/../repo_temp');
-$data_path = realpath(__DIR__.'/../webhook_data');
+$temp_path = realpath($base_path.'/repo_temp');
+$data_path = realpath($base_path.'/webhook_data');
 $key_path = $temp_path.'/rsa.key';
 
 /* Init Messages */
