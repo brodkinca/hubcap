@@ -24,7 +24,7 @@ KEY_PATH=$8
 chmod 0600 $KEY_PATH
 
 # Configure SSH
-export GIT_SSH="./ssh_client.sh"
+export GIT_SSH="ssh_client.sh"
 
 echo Retrieving $COMMIT from $USER/$REPO...
 
