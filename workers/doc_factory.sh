@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 exec 2>&1
 
@@ -23,9 +23,12 @@ KEY_PATH=$8
 # System Configuration
 chmod 0600 $KEY_PATH
 
+# Configure SSH
+export GIT_SSH="./ssh_client.sh"
+
 echo Retrieving $COMMIT from $USER/$REPO...
 
-git clone -n ssh://gh/$USER/$REPO.git $TEMP_PATH
+git clone -n git@github.com:$USER/$REPO.git $TEMP_PATH
 cd $TEMP_PATH
 git checkout -b $DEST_BRANCH
 git pull -v origin $DEST_BRANCH
