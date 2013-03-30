@@ -141,6 +141,8 @@ while (1) {
             continue;
         }
 
+        $log->addDebug($key_success.' bytes written to '.$key_path);
+
         system("rm -rf $path_working_dir");
         $mkdir_success = mkdir($path_working_dir);
 
