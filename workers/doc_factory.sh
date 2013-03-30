@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 exec 2>&1
 
@@ -19,12 +19,13 @@ SOURCE_PATH=$5
 DEST_BRANCH=$6
 DEST_PATH=$7
 KEY_PATH=$8
+BASE_PATH=$(dirname $0)
 
 # System Configuration
 chmod 0600 $KEY_PATH
 
 # Configure SSH
-export GIT_SSH="ssh_client.sh"
+export GIT_SSH="$BASE_PATH/ssh_client.sh"
 
 echo Retrieving $COMMIT from $USER/$REPO...
 
