@@ -93,6 +93,8 @@ while (1) {
 
         /* Set future paths */
         $path_working_dir = $temp_path.'/'.sha1($request_file);
+        system("rm -rf $path_working_dir");
+
         $path_request_file_active = $path_request_file.'.active';
 
         /* Rename request file to identify it as active */
@@ -143,7 +145,6 @@ while (1) {
 
         $log->addDebug($key_success.' bytes written to '.$key_path);
 
-        system("rm -rf $path_working_dir");
         $mkdir_success = mkdir($path_working_dir);
 
         if (!$mkdir_success) {
